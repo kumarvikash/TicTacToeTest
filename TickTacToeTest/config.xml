@@ -15,6 +15,7 @@
   </author>
   <content src="index.html" />
   <access origin="*" />
+  <preference name="permissions" value="none" />
   <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
   
   <!-- Use the newest version of PhoneGap -->
