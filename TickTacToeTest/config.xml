@@ -3,7 +3,7 @@
   xmlns:cdv="http://cordova.apache.org/ns/1.0"
   xmlns:gap = "http://phonegap.com/ns/1.0"
   xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps"
-  id="com.nasdaq.ngtestmobile" version="1.0.0.0"
+  id="com.nasdaq.ngtestmobile" version="1.0.0.1"
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns="http://www.w3.org/ns/widgets">
   <name>TicTacToeTesting</name>
