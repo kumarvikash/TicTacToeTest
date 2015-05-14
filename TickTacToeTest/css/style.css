@@ -4,7 +4,7 @@
 	background:#ccc;
 	border:1px solid #ddd;
 	padding:25px;
-	width:414px;
+	width:350px;
 }
 .action-bar{
 	margin-bottom:10px;
@@ -25,8 +25,8 @@
 	display:table-row;
 }
 .col{
-	width:136px;
-	height:136px;
+	width:100px;
+	height:100px;
 	display:table-cell;
 	background-color:#ccc;
 	border-bottom:1px solid #999;
