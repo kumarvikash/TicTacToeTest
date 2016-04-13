@@ -1,18 +1,53 @@
-var app = angular.module('tictactoeApp', []);
+// Ionic Starter App
 
-app.config(function($routeProvider) {
-    $routeProvider.
-        when('/', {
-            templateUrl: 'partials/tictactoe.html',
-            controller: 'GameController'
-        }).
-        otherwise({
-            redirectTo: '/'
-    });
-});
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.controllers' is found in controllers.js
+angular.module('starter', ['ionic', 'starter.gamecontrollers'])
 
-app.constant('grid_size', 3);
-
-app.factory('game', function(){
-	return new Game();
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
 })
+
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+
+  .state('app', {
+    url: "/app",
+    abstract: true,
+    templateUrl: "templates/menu.html",
+    controller: 'AppCtrl'
+  })
+
+  .state('app.puzzle', {
+    url: "/puzzle",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/puzzle.html"
+      }
+    }
+  })
+ .state('app.tictactoe', {
+        url: "/tictactoe",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/tictactoe.html",
+                controller: 'TicTacToeCtrl'
+            }
+        }
+    })
+ 
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/puzzle');
+});
